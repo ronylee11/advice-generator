@@ -1,5 +1,15 @@
 .attribution {
   display: none;
+  font-size: 11px;
+  text-align: center;
+  color: hsl(228, 45%, 44%);
+  position: relative;
+  top: 50px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 64%);
+  text-decoration: none;
 }
 
 /*Reset*/
@@ -19,6 +29,9 @@ body {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   background-color: hsl(218, 23%, 16%);
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .container {
@@ -31,6 +44,7 @@ body {
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .center {
