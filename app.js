@@ -13,12 +13,24 @@ const getAdvice = async () => {
   //console.log(error);
   //}
   try {
-    const config = { headers: { Accept: "application/json" } };
-    const res = await axios.get("https://api.adviceslip.com/advice", config); // Note: axios.get("") returns html
+    const res = await fetch("https://api.adviceslip.com/advice", { 
+      headers: {
+        Accept: "application/json",
+      },
+      cache: "no-cache" 
+    });
+    const data = await res.json();
+    //const config = { headers: {
+      //Accept: "application/json",
+      //'Cache-Control': 'no-cache, no-store, must-revalidate',
+      //'Pragma': 'no-cache',
+      //'Expires': '0'
+    //} };
+    //const res = await axios.get("https://api.adviceslip.com/advice", config); // Note: axios.get("") returns html
     //adviceNumber.innerText = res.data.slip.id;
     //advice.innerText = res.data.slip.advice;
     //console.log(res);
-    return res.data.slip;
+    return data.slip;
     //return res.data;
   } catch (e) {
     //console.log(e);
